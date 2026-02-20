@@ -28,7 +28,9 @@
 </head>
 <body>
 <div class="container">
-    <div class="header"><img src="logo.jpg" alt="JS MOTORS LYON"></div>
+   <div class="header">
+    <img src="https://github.com/user-attachments/assets/5bae5cb6-c434-49aa-842e-1a5be52f0df5" alt="JS MOTORS LYON">
+</div> 
 
     <div class="form-group">
         <div class="section-title">Nouveau Dossier</div>
