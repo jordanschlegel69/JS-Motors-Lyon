@@ -1,4 +1,3 @@
-![logo jpg](https://github.com/user-attachments/assets/56b99e19-a43a-4d1a-a6e1-a2bc0f079623)
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
