@@ -1,48 +1,45 @@
-![logo jpg](https://github.com/user-attachments/assets/13571658-0a73-445a-8659-cbf08c772c5f)
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Motors Lyon - Gestion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JS Motors Lyon</title>
     
     <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logo.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 15px; }
-        .container { max-width: 600px; margin: auto; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f7f6; margin: 0; padding: 10px; color: #333; }
+        .container { max-width: 500px; margin: auto; }
         
-        /* En-tête avec ton logo */
-        .header { background: #ffffff; padding: 15px; border-radius: 20px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .header img { max-width: 100%; height: auto; border-radius: 10px; }
+        /* En-tête avec Logo Large */
+        .header { background: #ffffff; padding: 20px 10px; border-radius: 20px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .header img { width: 100%; max-width: 350px; height: auto; display: block; margin: 0 auto; }
         
-        /* Sections et Formulaires */
-        .section-title { color: #1a1a1a; font-size: 18px; margin: 20px 0 10px 0; border-left: 5px solid #b22222; padding-left: 12px; font-weight: bold; text-transform: uppercase; }
-        .form-group { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        /* Formulaire */
+        .section-title { color: #000; font-size: 16px; margin: 25px 0 10px 5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; }
+        .section-title::before { content: ""; width: 4px; height: 18px; background: #b22222; margin-right: 10px; border-radius: 2px; }
         
-        label { font-size: 12px; font-weight: bold; color: #666; text-transform: uppercase; display: block; margin-top: 10px; }
-        input { width: 100%; padding: 12px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 16px; background: #f9f9f9; }
-        input:focus { border-color: #b22222; outline: none; background: #fff; }
+        .form-group { background: white; padding: 15px; border-radius: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #eee; }
+        input { width: 100%; padding: 14px; margin: 8px 0; border: 1px solid #ddd; border-radius: 12px; box-sizing: border-box; font-size: 16px; background: #fafafa; transition: 0.2s; }
+        input:focus { border-color: #b22222; background: #fff; outline: none; box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.1); }
         
-        button.main-btn { background: #1a1a1a; color: white; border: none; padding: 18px; width: 100%; border-radius: 10px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-        button.main-btn:active { transform: scale(0.98); background: #333; }
+        button.main-btn { background: #000; color: white; border: none; padding: 18px; width: 100%; border-radius: 14px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         
-        /* Cartes Dossier OR */
-        .or-card { background: white; padding: 15px; margin-top: 12px; border-radius: 15px; border-left: 8px solid #b22222; box-shadow: 0 3px 6px rgba(0,0,0,0.08); }
-        .or-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .or-header strong { font-size: 17px; color: #1a1a1a; }
+        /* Liste des OR */
+        .or-card { background: white; padding: 18px; margin-top: 12px; border-radius: 16px; border-left: 6px solid #b22222; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+        .or-header { display: flex; justify-content: space-between; align-items: center; }
+        .or-header strong { font-size: 18px; color: #000; }
         
-        .status-badge { background: #b22222; color: white; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+        .status-badge { background: #fdf2f2; color: #b22222; padding: 5px 12px; border-radius: 8px; font-size: 11px; font-weight: bold; border: 1px solid #f9dcdc; }
         
-        .details { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; color: #333; line-height: 1.6; }
-        .details b { color: #000; }
+        .details { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #f0f0f0; }
+        .info-block { background: #f9f9f9; padding: 12px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #f0f0f0; line-height: 1.5; }
+        .info-label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 4px; }
         
-        .info-block { background: #f8f9fa; padding: 10px; border-radius: 8px; margin-bottom: 10px; }
-        
-        .btn-red { background: #ffeded; color: #d63031; border: 1px solid #ffcccc; padding: 10px; width: 100%; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; }
-        
-        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+        .btn-red { background: #fff5f5; color: #e03131; border: 1px solid #ffc9c9; padding: 12px; width: 100%; border-radius: 10px; font-weight: bold; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -53,104 +50,53 @@
     </div>
 
     <div class="form-group">
-        <div class="section-title">Nouvel Ordre de Réparation</div>
-        
-        <label>Informations Client</label>
-        <input type="text" id="nom" placeholder="Nom & Prénom">
-        <input type="tel" id="tel" placeholder="N° de téléphone">
-        <input type="email" id="email" placeholder="Adresse Email">
-        <input type="text" id="adresse" placeholder="Adresse postale">
-        
-        <hr>
-        
-        <label>Informations Véhicule</label>
-        <input type="text" id="marque" placeholder="Marque & Modèle (ex: Renault Master)">
-        <input type="text" id="km" placeholder="Kilométrage actuel">
-        <input type="text" id="panne" placeholder="Description des travaux">
-        
-        <button class="main-btn" onclick="creerOR()">CRÉER LE DOSSIER OR</button>
+        <div class="section-title">Nouveau Dossier</div>
+        <input type="text" id="nom" placeholder="Nom du Client">
+        <input type="tel" id="tel" placeholder="Téléphone">
+        <input type="text" id="marque" placeholder="Véhicule (ex: Renault Master)">
+        <input type="text" id="panne" placeholder="Travaux à effectuer">
+        <button class="main-btn" onclick="creerOR()">CRÉER L'ORDRE DE RÉPARATION</button>
     </div>
 
-    <div class="section-title">Dossiers en cours</div>
+    <div class="section-title">Réparations en cours</div>
     <div id="listeOR"></div>
 </div>
 
 <script>
-    // Chargement des dossiers sauvegardés
     window.onload = function() {
-        const savedData = localStorage.getItem('jsMotorsStorage');
-        if (savedData) {
-            document.getElementById('listeOR').innerHTML = savedData;
-        }
+        const saved = localStorage.getItem('jsMotorsPro');
+        if (saved) document.getElementById('listeOR').innerHTML = saved;
     };
 
     function sauvegarder() {
-        const contenu = document.getElementById('listeOR').innerHTML;
-        localStorage.setItem('jsMotorsStorage', contenu);
+        localStorage.setItem('jsMotorsPro', document.getElementById('listeOR').innerHTML);
     }
 
     function creerOR() {
-        const fields = ['nom', 'tel', 'email', 'adresse', 'marque', 'km', 'panne'];
+        const fields = ['nom', 'tel', 'marque', 'panne'];
         const v = {};
         fields.forEach(f => v[f] = document.getElementById(f).value);
-
-        if(!v.nom || !v.marque) {
-            alert("Merci de remplir au moins le nom du client et le modèle du véhicule.");
-            return;
-        }
+        if(!v.nom || !v.marque) return alert("Remplir Nom et Véhicule");
 
         const orId = "OR-" + Math.floor(1000 + Math.random() * 9000);
-        const liste = document.getElementById('listeOR');
-        
         const card = document.createElement('div');
         card.className = 'or-card';
         card.innerHTML = `
-            <div class="or-header" onclick="toggleDetails(this)">
-                <div>
-                    <strong>${orId} : ${v.marque}</strong><br>
-                    <small style="color:#666">${v.nom}</small>
-                </div>
-                <span class="status-badge">OUVERT</span>
+            <div class="or-header" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block'">
+                <div><strong>${orId}</strong><br><small>${v.marque}</small></div>
+                <span class="status-badge">EN COURS</span>
             </div>
             <div class="details">
-                <div class="info-block">
-                    <b>👤 CLIENT</b><br>
-                    ${v.nom}<br>
-                    📞 ${v.tel}<br>
-                    📧 ${v.email}<br>
-                    🏠 ${v.adresse}
-                </div>
-                
-                <div class="info-block">
-                    <b>🚗 VÉHICULE</b><br>
-                    Modèle: ${v.marque}<br>
-                    KM: ${v.km} km<br>
-                    🛠️ Travaux: ${v.panne}
-                </div>
-                
-                <button class="btn-red" onclick="supprimer(this)">SUPPRIMER LE DOSSIER</button>
+                <div class="info-block"><span class="info-label">Client</span><b>${v.nom}</b><br>📞 ${v.tel}</div>
+                <div class="info-block"><span class="info-label">Détails Travaux</span>${v.panne}</div>
+                <button class="btn-red" onclick="if(confirm('Supprimer ?')) {this.closest('.or-card').remove(); sauvegarder();}">Supprimer le dossier</button>
             </div>
         `;
-
-        liste.prepend(card);
-        
-        // Vider le formulaire
+        document.getElementById('listeOR').prepend(card);
         fields.forEach(f => document.getElementById(f).value = '');
         sauvegarder();
-    }
-
-    function toggleDetails(header) {
-        const details = header.nextElementSibling;
-        details.style.display = (details.style.display === 'block') ? 'none' : 'block';
-    }
-
-    function supprimer(btn) {
-        if(confirm("Voulez-vous vraiment supprimer ce dossier de réparation ?")) {
-            btn.closest('.or-card').remove();
-            sauvegarder();
-        }
     }
 </script>
 
 </body>
-</html>
+</html>![logo jpg](https://github.com/user-attachments/assets/a60cf8aa-cde6-410e-b826-1e9245eaaa28)
