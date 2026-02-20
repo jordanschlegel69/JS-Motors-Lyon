@@ -25,15 +25,6 @@
     ```
 
 ---
-
-### 3. Le résultat sur ton téléphone
-Une fois que tu auras enregistré (Commit) :
-1.  Attends 1 minute.
-2.  Ouvre ton lien sur Chrome.
-3.  **Supprime le vieux raccourci** de ton écran d'accueil et **ajoutes-en un nouveau**. 
-4.  Tu devrais maintenant voir ton superbe logo avec le camion et la voiture sur ton écran d'accueil !
-
-**Est-ce que tu veux que je te donne le code complet "prêt à copier" incluant cette mise à jour visuelle ?**
         .header { background: #000; color: white; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 20px; }
         .logo-text { font-size: 24px; font-weight: bold; color: #fff; text-transform: uppercase; }
         
